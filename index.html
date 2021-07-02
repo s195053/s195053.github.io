@@ -1,1 +1,51 @@
-a
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>AからFから、あなたが一番好きと感じるた動物を選んでください？</h2>
+		<div id="app">
+			<label><input type="radio" value="red" v-model="picked">
+				A.鹿</label><br>
+			<label><input type="radio" value="orange" v-model="picked">
+				B.キツネ</label><br>
+			<label><input type="radio" value="green" v-model="picked">
+				C.イノシシ</label><br>
+			<label><input type="radio" value="yellow" v-model="picked">
+				D.トナカイ</label><br>
+			<label><input type="radio" value="violet" v-model="picked">
+				E.タヌキ</label><br>
+			<label><input type="radio" value="blue" v-model="picked">
+				F.イノシシ</label><p>
+			<!--{{ picked }} を選択 -->
+			<button v-on:click="hantei">判定</button>
+		<p>{{ kekka }}</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					picked: 'red',
+					kekka: ""
+				},
+				methods: {
+					hantei: function () {
+						if (this.picked == "red") {
+							this.kekka ="とにかく真面目なあなた";
+						} 
+						if (this.picked == "orange") {
+							this.kekka ="あなたは人に注目されることも、";
+						} 
+						}
+					}
+			})
+		</script>
+
+	</body>
+</html>
