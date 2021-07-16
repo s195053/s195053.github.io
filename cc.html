@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	</head>
+	
+	<body>
+		<h2>AからFから、あなたが一番好きと感じるた動物を選んでください？</h2>
+		<div id="app">
+			<label><input type="radio" value="red" v-model="picked">
+				A.鹿</label><br>
+			<label><input type="radio" value="orange" v-model="picked">
+				B.キツネ</label><br>
+			<label><input type="radio" value="green" v-model="picked">
+				C.イノシシ</label><br>
+			<label><input type="radio" value="yellow" v-model="picked">
+				D.トナカイ</label><br>
+			<label><input type="radio" value="violet" v-model="picked">
+				E.タヌキ</label><br>
+			<label><input type="radio" value="blue" v-model="picked">
+				F.ネズミ</label><p>
+			<!--{{ picked }} を選択 -->
+			<button v-on:click="hantei">判定</button>
+		<p>{{ kekka }}</p>
+		</div>
+
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					picked: 'red',
+					kekka: ""
+				},
+				methods: {
+					hantei: function () {
+						if (this.picked == "red") {
+							this.kekka ="とにかく真面目なあなた。あなたと誰かが見えていなくても、ズルや嘘を気持ちく悪く感じ、自分で自分が許せなくなってしまうタイプです。他人からも信頼されやすいので、幹事などを任される機械も多いのでしょう。浮き沈みの少ない、穏やかなな日常を望んでいます。";
+						} 
+						if (this.picked == "orange") {
+							this.kekka ="あなたは人に注目されることも、人を喜ばせてあげることにも興味があるタイプ。　ちょっぴり寂しがり屋で、きゅうじつに一人できりで過ごすのは、あまり好きてはありません。サプライズなどを企画するのも得意で、記念日はとても大事にしたがります";
+						}
+						if (this.picked == "green") {
+							this.kekka ="人を笑わせたり、その場を柔らかな空気にするのが得意なタイプ。　多分自分が犠牲になったり、ほんのちょっぴりウソをつくことになったとしても、その場が丸く収めるのなら問題なし!と思えてしまいます。気前も良く、誰かが喜んでくれるなら進んでご馳走したいと考えます。"; 
+						}
+						if (this.picked == "yellow") {
+							this.kekka ="みんなを(あっ)と言わせたい!と思っているタイプ。たった一人で、とんでもなく壮大なスケールのものを作り上げたり、圧倒的なスピートで仕事を仕上げたりします。誰かに褒められないとヤル気が出ないとので、自分のことはおろそかになりがちなところも．．．。"; 
+						}
+						if (this.picked == "violet") {
+							this.kekka ="自分の能力で、人を支えることに喜びを感じるタイプ。　自分がサホートしてあげたり、自分がアドバイスしてあげたおかげで、誰かが飛躍的に成長したり、大活躍できたりするのを見た時に[あぁ、生まれて来てよかったな!]なんてしみじみ思うでしょう"; 
+						}
+						if (this.picked == "blue") {
+							this.kekka ="人に[放っておけない]と思わせてしまうタイプ。　こんなことしてみたいな．．．、でもやり方がわからないな．．．、なんて思っていると、いつの問にか周囲にスペシャリストが集まって来て、あなたを助けてくれるでしょう。感謝の表現力をアップさせていくと、あなたのパワーも強まります"; 
+						}
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>
